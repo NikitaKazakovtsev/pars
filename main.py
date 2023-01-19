@@ -29,7 +29,7 @@ for vacancy in list_1:
     company = vacancy.find('a', attrs={"data-qa": "vacancy-serp__vacancy-employer"}).text
     town = vacancy.find('div', attrs={"data-qa": "vacancy-serp__vacancy-address"}).text
     description = vacancy.find(class_="g-user-content").text
-    if description == "Django" and description == 'Flask':
+    if  "Django" in description and "Flask" in description:
         articles.append({
             'link': vacancy_link,
             'company': company,
