@@ -25,17 +25,17 @@ for vacancy in list_1:
     soup1 = BeautifulSoup(vacancy1, features='lxml')
     asd = soup1.find(class_="vacancy-title")
     asd1 = asd.find('span')
-    asd2 = asd1.text
-    dsa1 = vacancy.find('a', attrs={"data-qa": "vacancy-serp__vacancy-employer"}).text
-    dsa2 = vacancy.find('div', attrs={"data-qa": "vacancy-serp__vacancy-address"}).text
-    dsa3 = vacancy.find(class_="g-user-content").text
-    if dsa3 == "Django" and dsa3 == 'Flask':
+    money = asd1.text
+    company = vacancy.find('a', attrs={"data-qa": "vacancy-serp__vacancy-employer"}).text
+    town = vacancy.find('div', attrs={"data-qa": "vacancy-serp__vacancy-address"}).text
+    description = vacancy.find(class_="g-user-content").text
+    if description == "Django" and description == 'Flask':
         articles.append({
             'link': vacancy_link,
-            'company': dsa1,
-            'money': asd2,
-            'town': dsa2,
-            'description':dsa3
+            'company': company,
+            'money': money,
+            'town': town,
+            'description':description
 
         })
 print(articles)
